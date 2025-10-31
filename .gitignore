@@ -1,1 +1,10 @@
-".vs/" 
+# Visual Studio cache
+.vs/
+
+# Build artifacts
+bin/
+obj/
+
+# User-specific settings
+*.user
+*.suo
