@@ -7,4 +7,5 @@ public interface IWeatherRepository
     Task<WeatherRecord?> GetByCityAsync(string city);
     Task<int> InsertAsync(WeatherRecord record);
     Task<int> UpdateAsync(WeatherRecord record);
+    Task<List<WeatherRecord>> GetAllAsync();
 }

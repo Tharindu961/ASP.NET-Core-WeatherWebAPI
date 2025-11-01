@@ -33,3 +33,5 @@ In here i have applied the validation messages to the necessory places that i ha
 I have added every DB calls inside the repository class to identify easily.
 
 I have added the 3rd party API_KEY to secrets.json file for security purposes(Keep sensitive information).
+
+I have added a endpoint to get the all the weather data of the database.

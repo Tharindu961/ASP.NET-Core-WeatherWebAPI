@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Weather_API.Managers.Interfaces;
+using Weather_API.Services.Interfaces;
 
 namespace Weather_API.Controllers;
 
@@ -8,10 +9,12 @@ namespace Weather_API.Controllers;
 public class WeatherController : ControllerBase
 {
     private readonly IWeatherManager _manager;
+    private readonly IWeatherRepository _repository;
 
-    public WeatherController(IWeatherManager manager)
+    public WeatherController(IWeatherManager manager, IWeatherRepository repository)
     {
         _manager = manager;
+        _repository = repository;
     }
 
     [HttpGet("{city}")]
@@ -19,5 +22,12 @@ public class WeatherController : ControllerBase
     {
         var result = await _manager.GetWeatherByCityAsync(city);
         return Ok(result);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var data = await _repository.GetAllAsync();
+        return Ok(data);
     }
 }

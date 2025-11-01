@@ -98,6 +98,25 @@ public class WeatherRepository : IWeatherRepository
         }
     }
 
+    public async Task<List<WeatherRecord>> GetAllAsync()
+    {
+        var records = new List<WeatherRecord>();
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            await conn.OpenAsync();
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM WeatherRecord", conn))
+            using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+            {
+                while (await reader.ReadAsync())
+                {
+                    records.Add(MapRecord(reader));
+                }
+            }
+        }
+        return records;
+    }
+
     private WeatherRecord MapRecord(SqlDataReader reader)
     {
         return new WeatherRecord
