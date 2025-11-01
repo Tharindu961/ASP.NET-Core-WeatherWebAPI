@@ -19,3 +19,13 @@ After adding those classes and injected as a service with interfaces in program.
 
 Then i started integration part with OpenWeather API and i added to API KEY in appsettings.json file, And i created the HttpClient
 inside of the manager class and i have created model response class returned by OpenWeather API(mapped data with existing model class).
+
+So I have added API to get the city weather all around via entering the city
+Route -> GET/api/weather/{city}
+In this API i have checked already added city weather data whether data exist or not, so i have check if data exist updated within 30 minutes 
+it return already exist data, if not existing data updated over 30 minutes i have called to the api and get the response and updated the existing record
+with new data and update, so there don't have have any exisiting record i insert to the database.
+
+In here i have applied the validation messages to the necessory places that i have to validate
+1)If the response code is not sucesses i have applied the validation
+2)API return data after converting readable type to object, converted object is null i have applied the validation.

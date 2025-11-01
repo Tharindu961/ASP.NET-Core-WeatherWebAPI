@@ -1,5 +1,8 @@
-﻿namespace Weather_API.Managers.Interfaces;
+﻿using Weather_API.Models;
+
+namespace Weather_API.Managers.Interfaces;
 
 public interface IWeatherManager
 {
+    Task<WeatherRecord> GetWeatherByCityAsync(string city);
 }

@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IWeatherRepository, WeatherRepository>();
-builder.Services.AddSingleton<IWeatherManager, WeatherManager>();
+builder.Services.AddScoped<IWeatherManager, WeatherManager>();
 
 builder.Services.AddHttpClient<IWeatherManager, WeatherManager>();
 

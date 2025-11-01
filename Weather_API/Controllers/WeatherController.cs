@@ -1,32 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
+using Weather_API.Managers.Interfaces;
 
 namespace Weather_API.Controllers;
 
 [ApiController]
-[Route("[WeatherInformation]")]
+[Route("api/weather")]
 public class WeatherController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+    private readonly IWeatherManager _manager;
 
-    private readonly ILogger<WeatherController> _logger;
-
-    public WeatherController(ILogger<WeatherController> logger)
+    public WeatherController(IWeatherManager manager)
     {
-        _logger = logger;
+        _manager = manager;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpGet("{city}")]
+    public async Task<IActionResult> GetWeather(string city)
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+        var result = await _manager.GetWeatherByCityAsync(city);
+        return Ok(result);
     }
 }
