@@ -20,14 +20,14 @@ public class WeatherController : ControllerBase
     [HttpGet("{city}")]
     public async Task<IActionResult> GetWeather(string city)
     {
-        var result = await _manager.GetWeatherByCityAsync(city);
+        var result = await _manager.GetWeatherByCity(city);
         return Ok(result);
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var data = await _repository.GetAllAsync();
+        var data = await _repository.GetAll();
         return Ok(data);
     }
 }

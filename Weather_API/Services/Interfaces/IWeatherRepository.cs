@@ -4,8 +4,8 @@ namespace Weather_API.Services.Interfaces;
 
 public interface IWeatherRepository
 {
-    Task<WeatherRecord?> GetByCityAsync(string city);
-    Task<int> InsertAsync(WeatherRecord record);
-    Task<int> UpdateAsync(WeatherRecord record);
-    Task<List<WeatherRecord>> GetAllAsync();
+    Task<WeatherRecord?> GetByCity(string city);
+    Task<int> Insert(WeatherRecord record);
+    Task<int> Update(WeatherRecord record);
+    Task<List<WeatherRecord>> GetAll();
 }

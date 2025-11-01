@@ -18,9 +18,9 @@ public class WeatherManager : IWeatherManager
         _apiKey = config["WeatherAPI:ApiKey"] ?? throw new ArgumentNullException("WeatherAPI:ApiKey not found in configuration.");
     }
 
-    public async Task<WeatherRecord> GetWeatherByCityAsync(string city)
+    public async Task<WeatherRecord> GetWeatherByCity(string city)
     {
-        var existing = await _repository.GetByCityAsync(city);
+        var existing = await _repository.GetByCity(city);
         var record = new WeatherRecord();
         if (existing != null && (DateTime.Now - existing.LastUpdated).TotalMinutes < 30)
         {
@@ -53,11 +53,11 @@ public class WeatherManager : IWeatherManager
             if (existing != null)
             {
                 record.Id = existing.Id;
-                await _repository.UpdateAsync(record);
+                await _repository.Update(record);
             }
             else
             {
-                await _repository.InsertAsync(record);
+                await _repository.Insert(record);
             }
         }
         return record;

@@ -8,8 +8,9 @@ Then i have tested this open api with Postman with applying API_KEY provided by 
 After that i decided what are data i should database in the table(columns of the table)
 First i have created a DB(WeatherDb) and WeatherRecord Table
 Columns -> Id, City, Country, Temperature, Description, Humidity, Pressure, WindSpeed, Cloudiness, LastUpdated
+In this table city column i have indexed, because speeds up searches.
 
-I have added the connection string appsettings.json and installed sqlclient package to project
+I have added the connection string appsettings.json and installed System.Data.SqlClient package to project
 Then i have created model class  of WeatherRecord
 
 After that i have created the folder structuture of the project
@@ -35,3 +36,10 @@ I have added every DB calls inside the repository class to identify easily.
 I have added the 3rd party API_KEY to secrets.json file for security purposes(Keep sensitive information).
 
 I have added a endpoint to get the all the weather data of the database.
+
+In here i got a warning via using System.Data.SqlClient package 'SqlCommand' is obsolete: 'Use the Microsoft.Data.SqlClient package instead.' 'SqlConnection' is obsolete: 'Use the Microsoft.Data.SqlClient package instead.' so i have changes it to Microsoft.Data.SqlClient packge, so after that it will disapeared.
+
+I have have updated the method names, updated some variable names meaningfully and remove unwanted imports on C# classes.
+
+I have added the xUnit test project for manager class to best practises, i have written the test covering all the lines and branches of this code using tests.
+We can verify the logic using unit tests as well.

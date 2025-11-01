@@ -4,5 +4,5 @@ namespace Weather_API.Managers.Interfaces;
 
 public interface IWeatherManager
 {
-    Task<WeatherRecord> GetWeatherByCityAsync(string city);
+    Task<WeatherRecord> GetWeatherByCity(string city);
 }
