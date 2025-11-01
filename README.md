@@ -29,3 +29,7 @@ with new data and update, so there don't have have any exisiting record i insert
 In here i have applied the validation messages to the necessory places that i have to validate
 1)If the response code is not sucesses i have applied the validation
 2)API return data after converting readable type to object, converted object is null i have applied the validation.
+
+I have added every DB calls inside the repository class to identify easily.
+
+I have added the 3rd party API_KEY to secrets.json file for security purposes(Keep sensitive information).
