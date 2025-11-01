@@ -9,3 +9,8 @@ After that i decided what are data i should database in the table(columns of the
 First i have created a DB(WeatherDb) and WeatherRecord Table
 Columns -> Id, City, Country, Temperature, Description, Humidity, Pressure, WindSpeed, Cloudiness, LastUpdated
 
+I have added the connection string appsettings.json and installed sqlclient package to project
+Then i have created model class  of WeatherRecord
+
+After that i have created the folder structuture of the project
+Controllers -> Managers -> Services and i created intefaces classes as well.
