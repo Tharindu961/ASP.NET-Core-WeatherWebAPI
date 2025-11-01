@@ -1,6 +1,6 @@
-﻿namespace Weather_API.Services.Interfaces
+﻿namespace WeatherApi.Services.Interfaces;
+
+public interface IWeatherRepository
 {
-    public class IWeatherRepository
-    {
-    }
+
 }

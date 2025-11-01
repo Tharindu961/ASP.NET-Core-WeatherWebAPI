@@ -1,6 +1,13 @@
-﻿namespace Weather_API.Services
+﻿using WeatherApi.Services.Interfaces;
+
+namespace WeatherApi.Services;
+
+public class WeatherRepository : IWeatherRepository
 {
-    public class WeatherRepository
+    private readonly string _connectionString;
+
+    public WeatherRepository(IConfiguration configuration)
     {
+        _connectionString = configuration.GetConnectionString("DefaultConnection");
     }
 }

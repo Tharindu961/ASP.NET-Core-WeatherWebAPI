@@ -14,3 +14,5 @@ Then i have created model class  of WeatherRecord
 
 After that i have created the folder structuture of the project
 Controllers -> Managers -> Services and i created intefaces classes as well.
+
+After adding those classes and injected as a service with interfaces in program.cs file.
