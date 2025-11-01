@@ -15,7 +15,7 @@ public class WeatherManager : IWeatherManager
     {
         _repository = repository;
         _httpClient = httpClient;
-        _apiKey = config["OpenWeatherApiKey"] ?? throw new Exception("OpenWeather API key is missing in configuration.");
+        _apiKey = config["WeatherAPI:ApiKey"] ?? throw new ArgumentNullException("WeatherAPI:ApiKey not found in configuration.");
     }
 
     public async Task<WeatherRecord> GetWeatherByCityAsync(string city)
