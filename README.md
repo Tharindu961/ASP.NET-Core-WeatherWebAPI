@@ -1,4 +1,4 @@
-# ASP.NET-Core-C-Web-API
+# ASP.NET-Core-C#-Web-API
 This is ASP.NET Core C# Web API App for integrate with public weather api
 
 First i have created a git repo and create web api project push to the branch as initial commit.
