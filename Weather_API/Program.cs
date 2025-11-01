@@ -15,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IWeatherRepository, WeatherRepository>();
 builder.Services.AddSingleton<IWeatherManager, WeatherManager>();
 
+builder.Services.AddHttpClient<IWeatherManager, WeatherManager>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

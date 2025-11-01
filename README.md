@@ -15,4 +15,7 @@ Then i have created model class  of WeatherRecord
 After that i have created the folder structuture of the project
 Controllers -> Managers -> Services and i created intefaces classes as well.
 
-After adding those classes and injected as a service with interfaces in program.cs file.
+After adding those classes and injected as a service with interfaces in program.cs file.(Registerd the services)
+
+Then i started integration part with OpenWeather API and i added to API KEY in appsettings.json file, And i created the HttpClient
+inside of the manager class and i have created model response class returned by OpenWeather API(mapped data with existing model class).
