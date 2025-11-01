@@ -15,13 +15,13 @@ public class WeatherRepository : IWeatherRepository
 
     public async Task<WeatherRecord?> GetByCity(string city)
     {
-        var conn = new SqlConnection(_connectionString);
+        using var conn = new SqlConnection(_connectionString);
         await conn.OpenAsync();
 
-        var cmd = new SqlCommand("SELECT * FROM WeatherRecord WHERE City = @City", conn);
+        using var cmd = new SqlCommand("SELECT * FROM WeatherRecord WHERE City = @City", conn);
         cmd.Parameters.AddWithValue("@City", city);
 
-        var reader = await cmd.ExecuteReaderAsync();
+        using var reader = await cmd.ExecuteReaderAsync();
         if (await reader.ReadAsync())
         {
             return MapRecord(reader);
@@ -32,10 +32,10 @@ public class WeatherRepository : IWeatherRepository
 
     public async Task<int> Insert(WeatherRecord record)
     {
-        var conn = new SqlConnection(_connectionString);
+        using var conn = new SqlConnection(_connectionString);
         await conn.OpenAsync();
 
-        var cmd = new SqlCommand(@"
+        using var cmd = new SqlCommand(@"
                 INSERT INTO WeatherRecord
                 (City, Country, Temperature, Description, Humidity, Pressure, WindSpeed, Cloudiness, LastUpdated)
                 VALUES
@@ -57,10 +57,10 @@ public class WeatherRepository : IWeatherRepository
 
     public async Task<int> Update(WeatherRecord record)
     {
-        var conn = new SqlConnection(_connectionString);
+        using var conn = new SqlConnection(_connectionString);
         await conn.OpenAsync();
 
-        var cmd = new SqlCommand(@"
+        using var cmd = new SqlCommand(@"
                 UPDATE WeatherRecord
                 SET Country = @Country,
                     Temperature = @Temperature,

@@ -43,3 +43,5 @@ I have have updated the method names, updated some variable names meaningfully a
 
 I have added the xUnit test project for manager class to best practises, i have written the test covering all the lines and branches of this code using tests.
 We can verify the logic using unit tests as well.
+
+I have simplified database access by 'using var' statements for automatic disposal and made the method fully asynchronous for better performance.
