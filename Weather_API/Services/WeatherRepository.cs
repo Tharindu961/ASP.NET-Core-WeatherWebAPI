@@ -1,6 +1,6 @@
-﻿using WeatherApi.Services.Interfaces;
+﻿using Weather_API.Services.Interfaces;
 
-namespace WeatherApi.Services;
+namespace Weather_API.Services;
 
 public class WeatherRepository : IWeatherRepository
 {

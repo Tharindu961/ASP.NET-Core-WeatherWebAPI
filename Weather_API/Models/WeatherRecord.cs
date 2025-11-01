@@ -1,4 +1,4 @@
-﻿namespace WeatherApi.Models;
+﻿namespace Weather_API.Models;
 
 public class WeatherRecord
 {

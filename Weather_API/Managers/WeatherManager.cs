@@ -1,7 +1,7 @@
 ﻿using Weather_API.Services.Interfaces;
-using WeatherApi.Managers.Interfaces;
+using Weather_API.Managers.Interfaces;
 
-namespace WeatherApi.Managers;
+namespace Weather_API.Managers;
 
 public class WeatherManager : IWeatherManager
 {
