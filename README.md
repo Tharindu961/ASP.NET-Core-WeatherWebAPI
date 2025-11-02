@@ -45,3 +45,60 @@ I have added the xUnit test project for manager class to best practises, i have 
 We can verify the logic using unit tests as well.
 
 I have simplified database access by 'using var' statements for automatic disposal and made the method fully asynchronous for better performance.
+
+Api Responses
+
+1)https://localhost:7297/api/weather/Colombo
+
+{
+  "id": 2,
+  "city": "Colombo",
+  "country": "LK",
+  "temperature": 25.97,
+  "description": "overcast clouds",
+  "humidity": 78,
+  "pressure": 1013,
+  "windSpeed": 3.15,
+  "cloudiness": 96,
+  "lastUpdated": "2025-11-02T06:36:38.0863113+05:30"
+}
+
+2)https://localhost:7297/api/weather
+
+[
+  {
+    "id": 1,
+    "city": "Sad",
+    "country": "UA",
+    "temperature": 8.5,
+    "description": "scattered clouds",
+    "humidity": 77,
+    "pressure": 1020,
+    "windSpeed": 5.19,
+    "cloudiness": 45,
+    "lastUpdated": "2025-11-01T11:27:28.543"
+  },
+  {
+    "id": 2,
+    "city": "Colombo",
+    "country": "LK",
+    "temperature": 25.97,
+    "description": "overcast clouds",
+    "humidity": 78,
+    "pressure": 1013,
+    "windSpeed": 3.15,
+    "cloudiness": 96,
+    "lastUpdated": "2025-11-02T06:36:38.11"
+  },
+  {
+    "id": 3,
+    "city": "Sydney",
+    "country": "AU",
+    "temperature": 21.03,
+    "description": "broken clouds",
+    "humidity": 74,
+    "pressure": 1013,
+    "windSpeed": 3.6,
+    "cloudiness": 75,
+    "lastUpdated": "2025-11-01T13:15:14.057"
+  }, ...]
